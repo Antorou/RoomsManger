@@ -1,0 +1,15 @@
+<h1><%= @hotel.name %></h1>
+<p>Adresse : <%= @hotel.address %></p>
+
+<h2>Chambres de l’hôtel</h2>
+<ul>
+  <% @rooms.each do |room| %>
+    <li>
+      Chambre ##<%= room.id %> - Capacité : <%= room.capacity %> lits - Prix : <%= room.price_per_night %> €
+      <%= link_to "Voir les détails", room_path(room) %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Retour à la liste des hôtels", hotels_path %>
+

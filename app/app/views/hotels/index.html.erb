@@ -1,0 +1,16 @@
+<h1>Liste des Hôtels</h1>
+
+<%= link_to "Ajouter un nouvel hôtel", new_hotel_path %>
+
+<ul>
+  <% @hotels.each do |hotel| %>
+    <li>
+      <%= link_to hotel.name, hotel_path(hotel) %> - <%= hotel.address %>
+      <%= link_to "Modifier", edit_hotel_path(hotel) %> |
+          <%= link_to 'Sup',
+                        hotel_path(hotel),
+                        data: { turbo_method: :delete, turbo_confirm: 'Are you sure you delete this hotel' } %>
+
+    </li>
+  <% end %>
+</ul>

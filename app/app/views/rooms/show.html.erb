@@ -1,0 +1,17 @@
+<div class="container mt-4">
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <h1 class="card-title text-center mb-4">Room details</h1>
+      <p><strong>Hotel name :</strong> <%= @room.hotel.name %></p>
+      <p><strong>Adress :</strong> <%= @room.hotel.address %></p>
+      <p><strong>Capacity of the room :</strong> <%= @room.capacity %> guests</p>
+      <p><strong>Price per night :</strong> <%= @room.price_per_night.to_i %>€</p>
+      <div class="d-flex justify-content-between">
+        <%= link_to "Back to the rooms list", rooms_path, class: "btn btn-secondary" %>
+      </div>
+    </div>
+  </div>
+  <div class="mt-4">
+    <%= render "bookings/booking_form", room: @room, booking: @booking %>
+  </div>
+</div>

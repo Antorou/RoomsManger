@@ -1,0 +1,17 @@
+  <div class="container mt-5">
+    <h1 class="text-center mb-4">Rooms available</h1>
+    <ul class="list-group">
+      <% @rooms.each do |room| %>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <span>
+            A room for <%= room.capacity %> in <strong><%= room.hotel.name %></strong> - <%= room.price_per_night.to_i %> €
+          </span>
+          <%=  link_to "View the room", room_path(room) %>
+        </li>
+      <% end %>
+    </ul>
+
+      <div class="text-center mt-4">
+    <%= link_to "Back to Home", root_path, class: "btn btn-primary" %>
+  </div>
+  </div>
